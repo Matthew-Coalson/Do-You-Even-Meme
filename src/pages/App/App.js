@@ -15,18 +15,21 @@ class App extends Component {
       ...this.getInitialState(),
       // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
-      memes: memeService.getMemes(),
+      memes: [],
     };
+  }
+
+  async componentDidMount() {
+    try {
+      const { data } = await memeService.getMemes();
+      this.setState({ memes: data.memes });
+    } catch (err) {}
   }
 
   getInitialState() {
     return {
       //fill this in...?
     };
-  }
-
-  printMemes() {
-    console.log(this.memes);
   }
 
   handleLogout = () => {
@@ -49,6 +52,7 @@ class App extends Component {
               <MainPage
                 handleLogout={this.handleLogout}
                 user={this.state.user}
+                memes={this.state.memes}
               />
             )}
           />

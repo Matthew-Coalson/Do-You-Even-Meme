@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
+
 import MainPage from "../MainPage/MainPage";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
+import CreatePage from "../CreatePage/CreatePage";
+
 import userService from "../../utils/userService";
 import memeService from "../../utils/memeService";
 //import tokenService from "../../utils/tokenService";
@@ -12,8 +15,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      ...this.getInitialState(),
-      // Initialize user if there's a token, otherwise null
       user: userService.getUser(),
       memes: [],
     };
@@ -24,12 +25,6 @@ class App extends Component {
       const { data } = await memeService.getMemes();
       this.setState({ memes: data.memes });
     } catch (err) {}
-  }
-
-  getInitialState() {
-    return {
-      //fill this in...?
-    };
   }
 
   handleLogout = () => {
@@ -75,6 +70,17 @@ class App extends Component {
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             )}
+          />
+          <Route
+            exact
+            path="/create"
+            render={(props) =>
+              userService.getUser() ? (
+                <CreatePage {...props} handleLogout={this.handleLogout} />
+              ) : (
+                <Redirect to="/login" />
+              )
+            }
           />
         </Switch>
       </div>

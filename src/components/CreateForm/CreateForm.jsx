@@ -40,7 +40,7 @@ class CreateForm extends Component {
           alt={this.props.meme.name}
           className="create-img"
         />
-        <form className="form" classonSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <div>
             <div>
               <input

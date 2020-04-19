@@ -44,12 +44,11 @@ class SignupForm extends Component {
     return (
       <div>
         <header className="header-footer">Sign Up</header>
-        <form className="form-horizontal" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <div className="col-sm-12">
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <div>
               <input
                 type="text"
-                className="form-control"
                 placeholder="Username"
                 value={this.state.username}
                 name="username"
@@ -57,11 +56,10 @@ class SignupForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12">
+          <div>
+            <div>
               <input
                 type="email"
-                className="form-control"
                 placeholder="Email"
                 value={this.state.email}
                 name="email"
@@ -69,11 +67,10 @@ class SignupForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12">
+          <div>
+            <div>
               <input
                 type="password"
-                className="form-control"
                 placeholder="Password"
                 value={this.state.password}
                 name="password"
@@ -81,11 +78,10 @@ class SignupForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12">
+          <div>
+            <div>
               <input
                 type="password"
-                className="form-control"
                 placeholder="Confirm Password"
                 value={this.state.passwordConf}
                 name="passwordConf"
@@ -93,14 +89,9 @@ class SignupForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12 text-center">
-              <button
-                className="btn btn-default"
-                disabled={this.isFormInvalid()}
-              >
-                Sign Up
-              </button>
+          <div>
+            <div>
+              <button disabled={this.isFormInvalid()}>Sign Up</button>
               &nbsp;&nbsp;
             </div>
           </div>

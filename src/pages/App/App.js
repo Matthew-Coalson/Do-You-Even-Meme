@@ -6,7 +6,6 @@ import MainPage from "../MainPage/MainPage";
 
 import userService from "../../utils/userService";
 import memeService from "../../utils/memeService";
-//import tokenService from "../../utils/tokenService";
 
 class App extends Component {
   constructor() {

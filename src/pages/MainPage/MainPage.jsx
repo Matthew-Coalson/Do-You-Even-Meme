@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Modal from "../../components/Modal/Modal";

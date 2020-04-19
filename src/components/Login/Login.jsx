@@ -32,12 +32,11 @@ class Login extends Component {
     return (
       <div className="Login">
         <header className="header-footer">Log In</header>
-        <form className="form-horizontal" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <div className="col-sm-12">
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <div>
               <input
                 type="email"
-                className="form-control"
                 placeholder="Email"
                 value={this.state.email}
                 name="email"
@@ -45,11 +44,10 @@ class Login extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12">
+          <div>
+            <div>
               <input
                 type="password"
-                className="form-control"
                 placeholder="Password"
                 value={this.state.pw}
                 name="pw"
@@ -57,9 +55,9 @@ class Login extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Log In</button>
+          <div>
+            <div>
+              <button>Log In</button>
               &nbsp;&nbsp;&nbsp;
             </div>
           </div>

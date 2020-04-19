@@ -9,17 +9,23 @@ class MainPage extends Component {
   state = {
     show: false,
     form: "",
+    meme: [],
   };
 
-  handleClick = (form) => {
+  setForm = (form) => {
     this.setState({ form: form });
-    this.toggleModal();
   };
 
   toggleModal = () => {
     this.state.show
       ? this.setState({ show: false })
       : this.setState({ show: true });
+  };
+
+  handleMemeClick = (meme) => {
+    this.setForm("create");
+    this.toggleModal();
+    this.setState({ meme: meme });
   };
 
   render() {
@@ -29,24 +35,22 @@ class MainPage extends Component {
           show={this.state.show}
           toggleModal={this.toggleModal}
           form={this.state.form}
+          handleSignupOrLogin={this.props.handleSignupOrLogin}
+          history={this.props.history}
+          meme={this.state.meme}
+          user={this.props.user}
         />
         <NavBar
           user={this.props.user}
           handleLogout={this.props.handleLogout}
-          handleClick={this.handleClick}
+          toggleModal={this.toggleModal}
+          setForm={this.setForm}
         />
         {this.props.memes
           .filter((meme) => meme.box_count <= 2)
           .map((meme) => (
             <div key={meme.id} className="index-memes">
-              <Link
-                to={{
-                  pathname: "/create",
-                  state: {
-                    meme: meme,
-                  },
-                }}
-              >
+              <Link to="" onClick={() => this.handleMemeClick(meme)}>
                 <img
                   src={meme.url}
                   alt={meme.name}

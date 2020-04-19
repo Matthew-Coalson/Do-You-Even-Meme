@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import MainPage from "../MainPage/MainPage";
-import SignupPage from "../SignupPage/SignupPage";
-import LoginPage from "../LoginPage/LoginPage";
-import CreatePage from "../CreatePage/CreatePage";
 
 import userService from "../../utils/userService";
 import memeService from "../../utils/memeService";
@@ -43,44 +40,15 @@ class App extends Component {
           <Route
             exact
             path="/"
-            render={() => (
+            render={({ history }) => (
               <MainPage
                 handleLogout={this.handleLogout}
                 user={this.state.user}
                 memes={this.state.memes}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/signup"
-            render={({ history }) => (
-              <SignupPage
                 history={history}
                 handleSignupOrLogin={this.handleSignupOrLogin}
               />
             )}
-          />
-          <Route
-            exact
-            path="/login"
-            render={({ history }) => (
-              <LoginPage
-                history={history}
-                handleSignupOrLogin={this.handleSignupOrLogin}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/create"
-            render={(props) =>
-              userService.getUser() ? (
-                <CreatePage {...props} handleLogout={this.handleLogout} />
-              ) : (
-                <Redirect to="/login" />
-              )
-            }
           />
         </Switch>
       </div>

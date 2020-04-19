@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./LoginPage.css";
+import "./Login.css";
 import userService from "../../utils/userService";
 
-class LoginPage extends Component {
+class Login extends Component {
   state = {
     email: "",
     pw: "",
+    msg: "",
   };
 
   handleChange = (e) => {
@@ -20,19 +21,17 @@ class LoginPage extends Component {
     e.preventDefault();
     try {
       await userService.login(this.state);
-      // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
-      // Successfully signed up - show GamePage
       this.props.history.push("/");
+      this.props.toggleModal();
     } catch (err) {
-      // Use a modal or toast in your apps instead of alert
-      alert("Invalid Credentials!");
+      this.setState({ msg: err.message });
     }
   };
 
   render() {
     return (
-      <div className="LoginPage">
+      <div className="Login">
         <header className="header-footer">Log In</header>
         <form className="form-horizontal" onSubmit={this.handleSubmit}>
           <div className="form-group">
@@ -63,13 +62,16 @@ class LoginPage extends Component {
             <div className="col-sm-12 text-center">
               <button className="btn btn-default">Log In</button>
               &nbsp;&nbsp;&nbsp;
-              <Link to="/">Cancel</Link>
             </div>
           </div>
         </form>
+        <p>{this.state.msg}</p>
+        <button className="btn-cancel" onClick={this.props.toggleModal}>
+          Cancel
+        </button>
       </div>
     );
   }
 }
 
-export default LoginPage;
+export default Login;

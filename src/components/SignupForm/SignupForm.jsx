@@ -26,6 +26,7 @@ class SignupForm extends Component {
       this.props.handleSignupOrLogin();
       // Successfully signed up - show GamePage
       this.props.history.push("/");
+      this.props.toggleModal();
     } catch (err) {
       // Invalid user data (probably duplicate email)
       this.props.updateMessage(err.message);
@@ -102,10 +103,12 @@ class SignupForm extends Component {
                 Sign Up
               </button>
               &nbsp;&nbsp;
-              <Link to="/">Cancel</Link>
             </div>
           </div>
         </form>
+        <button className="btn-cancel" onClick={this.props.toggleModal}>
+          Cancel
+        </button>
       </div>
     );
   }

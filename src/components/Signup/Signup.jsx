@@ -15,7 +15,12 @@ class Signup extends Component {
   render() {
     return (
       <div className="Signup">
-        <SignupForm {...this.props} updateMessage={this.updateMessage} />
+        <SignupForm
+          history={this.props.history}
+          handleSignupOrLogin={this.props.handleSignupOrLogin}
+          toggleModal={this.props.toggleModal}
+          updateMessage={this.updateMessage}
+        />
         <p>{this.state.message}</p>
       </div>
     );

@@ -18,14 +18,18 @@ class Create extends Component {
 
   render() {
     let create = this.state.meme ? (
-      <div className="Create-content">
-        <img src={this.state.meme.data.url} alt="New Meme" />
+      <div className="create-content">
+        <img
+          src={this.state.meme.data.url}
+          alt="New Meme"
+          className="create-img"
+        />
         <button className="btn-cancel" onClick={this.handleCancel}>
           Cancel
         </button>
       </div>
     ) : (
-      <div className="Create-content">
+      <div className="create-content">
         <CreateForm
           meme={this.props.meme}
           handleStateChange={this.handleStateChange}
@@ -33,7 +37,7 @@ class Create extends Component {
         />
       </div>
     );
-    return <div className="Create">{create}</div>;
+    return <div className="create">{create}</div>;
   }
 }
 

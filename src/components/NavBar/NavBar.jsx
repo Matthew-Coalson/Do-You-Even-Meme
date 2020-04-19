@@ -32,7 +32,12 @@ class NavBar extends Component {
       </div>
     );
 
-    return <div className="NavBar">{nav}</div>;
+    return (
+      <div className="NavBar">
+        <h1 className="title">Do You Even Meme</h1>
+        {nav}
+      </div>
+    );
   }
 }
 

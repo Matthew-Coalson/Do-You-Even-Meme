@@ -33,15 +33,18 @@ class CreateForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="form-div">
         <header className="header-footer">Create Meme</header>
-        <img src={this.props.meme.url} alt={this.props.meme.name} />
-        <form className="form-horizontal" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <div className="col-sm-12">
+        <img
+          src={this.props.meme.url}
+          alt={this.props.meme.name}
+          className="create-img"
+        />
+        <form className="form" classonSubmit={this.handleSubmit}>
+          <div>
+            <div>
               <input
                 type="text"
-                className="form-control"
                 placeholder="Field 1"
                 value={this.state.text0}
                 name="text0"
@@ -49,11 +52,10 @@ class CreateForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12">
+          <div>
+            <div>
               <input
                 type="text"
-                className="form-control"
                 placeholder="Field 2"
                 value={this.state.text1}
                 name="text1"
@@ -61,8 +63,8 @@ class CreateForm extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
-            <div className="btn-create-div">
+          <div>
+            <div>
               <button className="btn-create">Create</button>
               &nbsp;&nbsp;
             </div>

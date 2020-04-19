@@ -30,7 +30,7 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div className="MainPage">
+      <div className="main-page">
         <Modal
           show={this.state.show}
           toggleModal={this.toggleModal}
@@ -46,6 +46,7 @@ class MainPage extends Component {
           toggleModal={this.toggleModal}
           setForm={this.setForm}
         />
+        <br />
         {this.props.memes
           .filter((meme) => meme.box_count <= 2)
           .map((meme) => (

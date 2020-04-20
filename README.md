@@ -49,20 +49,24 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/co
 
 ### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+# Do You Even Meme
 
-### Making a Progressive Web App
+Do You Even Meme is a simple app that let's you create all those memes you thought of but didn't have the time to edit a paint file to create.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+![](https://i.imgur.com/VJHSXBx.jpg)
 
-### Advanced Configuration
+## Technologies Used:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Express, MongoDB, React, Javascript, Node.js
 
-### Deployment
+## Getting Started:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+https://do-you-even-meme.herokuapp.com/
 
-### `npm run build` fails to minify
+Signup and pick a meme template and let the hilarious creativity flow.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+https://trello.com/b/yfDxGWE3/do-you-even-meme
+
+## Next Steps:
+
+Better styling, persists created memes in database, view other people's memes, view your own meme. Share meme feature.

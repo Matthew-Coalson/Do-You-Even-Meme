@@ -6,7 +6,7 @@ Do You Even Meme is a simple app that let's you create all those memes you thoug
 
 ## Technologies Used:
 
-Express, MongoDB, React, Javascript, Node.js
+Express, MongoDB, React, Javascript, Node.js, Mongoose
 
 ## Getting Started:
 
